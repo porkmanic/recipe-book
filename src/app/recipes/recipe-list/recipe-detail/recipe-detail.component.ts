@@ -13,8 +13,8 @@ export class RecipeDetailComponent implements OnInit, OnDestroy {
   private subscription: Subscription;
   private recipeIndex: number;
   selectedRecipe: Recipe;
-  constructor(private sls: ShoppingListService, 
-              private route: ActivatedRoute, 
+  constructor(private sls: ShoppingListService,
+              private route: ActivatedRoute,
               private recipesService: RecipeService,
               private router: Router) { }
 
@@ -28,7 +28,7 @@ export class RecipeDetailComponent implements OnInit, OnDestroy {
   }
 
   onAddToShoppingList() {
-    this.sls.addItem(this.selectedRecipe.ingredients);
+    this.sls.addItems(this.selectedRecipe.ingredients);
   }
 
   ngOnDestroy(){
